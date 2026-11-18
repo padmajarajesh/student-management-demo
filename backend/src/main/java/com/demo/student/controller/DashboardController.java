@@ -1,0 +1,26 @@
+package com.demo.student.controller;
+
+import com.demo.student.dto.ApiResponse;
+import com.demo.student.dto.DashboardStatsResponse;
+import com.demo.student.security.AuthenticatedUser;
+import com.demo.student.service.DashboardService;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/dashboard")
+public class DashboardController {
+
+    private final DashboardService dashboardService;
+
+    public DashboardController(DashboardService dashboardService) {
+        this.dashboardService = dashboardService;
+    }
+
+    @GetMapping("/stats")
+    public ApiResponse<DashboardStatsResponse> stats(@AuthenticationPrincipal AuthenticatedUser user) {
+        return ApiResponse.ok("Dashboard statistics", dashboardService.getStats(user.id()));
+    }
+}

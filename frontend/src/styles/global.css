@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Design tokens + base styles
+   ========================================================================== */
+:root {
+  --navy-900: #0f1f3d;
+  --navy-800: #14284b;
+  --navy-700: #1e3a6e;
+  --navy-600: #274b8a;
+  --navy-100: #e6ecf6;
+  --navy-50: #f2f5fb;
+
+  --primary: var(--navy-700);
+  --primary-hover: var(--navy-800);
+  --primary-soft: var(--navy-100);
+
+  --bg: #f3f5f9;
+  --surface: #ffffff;
+  --border: #e3e7ee;
+  --border-strong: #cfd6e2;
+
+  --text: #1a2233;
+  --text-muted: #5b6577;
+  --text-subtle: #8a93a5;
+
+  --danger: #c62828;
+  --danger-hover: #a51f1f;
+  --danger-soft: #fdecec;
+  --success: #1e7e4a;
+  --success-soft: #e7f6ee;
+  --warning: #a86200;
+  --warning-soft: #fff4e0;
+  --info: #1e5aa8;
+  --info-soft: #e8f1fc;
+  --purple: #6941c6;
+  --purple-soft: #f1ecfd;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.16);
+
+  --sidebar-width: 256px;
+  --topbar-height: 64px;
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--navy-600);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
